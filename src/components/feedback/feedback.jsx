@@ -1,15 +1,16 @@
 import { nanoid } from 'nanoid';
+import { StyledBtn, WraperBtns } from './feedback';
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const optionsKeys = Object.keys(options);
   return (
-    <div>
+    <WraperBtns>
       {optionsKeys.map(item => {
         return (
-          <button key={nanoid()} onClick={onLeaveFeedback} value={item}>
+          <StyledBtn key={nanoid()} onClick={onLeaveFeedback} value={item}>
             {item}
-          </button>
+          </StyledBtn>
         );
       })}
-    </div>
+    </WraperBtns>
   );
 };
