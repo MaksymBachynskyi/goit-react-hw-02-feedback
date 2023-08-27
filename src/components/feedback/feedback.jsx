@@ -1,12 +1,17 @@
-import { nanoid } from 'nanoid';
-import { StyledBtn, WraperBtns } from './feedback';
+import { StyledBtn, WraperBtns } from './feedback.styled';
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const optionsKeys = Object.keys(options);
+
   return (
     <WraperBtns>
       {optionsKeys.map(item => {
         return (
-          <StyledBtn key={nanoid()} onClick={onLeaveFeedback} value={item}>
+          <StyledBtn
+            key={item}
+            onClick={() => {
+              onLeaveFeedback(item);
+            }}
+          >
             {item}
           </StyledBtn>
         );
